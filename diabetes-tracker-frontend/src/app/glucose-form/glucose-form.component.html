@@ -1,0 +1,23 @@
+<h2>Add Glucose Reading</h2>
+<form (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="glucoseLevel" class="form-label">Glucose Level</label>
+    <input type="number" class="form-control" id="glucoseLevel" [(ngModel)]="glucose.glucoseLevel" name="glucoseLevel" required>
+  </div>
+  <div class="mb-3">
+    <label for="readingTime" class="form-label">Reading Time</label>
+    <input type="datetime-local" class="form-control" id="readingTime" [(ngModel)]="glucose.readingTime" name="readingTime" required>
+  </div>
+  <div class="mb-3">
+    <label for="measurementUnit" class="form-label">Measurement Unit</label>
+    <select class="form-control" id="measurementUnit" [(ngModel)]="glucose.measurementUnit" name="measurementUnit" required>
+      <option value="mg/dL">mg/dL</option>
+      <option value="mmol/L">mmol/L</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="notes" class="form-label">Notes</label>
+    <textarea class="form-control" id="notes" [(ngModel)]="glucose.notes" name="notes"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Save Reading</button>
+</form>

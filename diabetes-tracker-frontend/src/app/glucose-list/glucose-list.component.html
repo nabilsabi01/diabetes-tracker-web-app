@@ -1,0 +1,19 @@
+<h2>Glucose Readings</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Glucose Level</th>
+      <th>Reading Time</th>
+      <th>Measurement Unit</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reading of readings">
+      <td>{{ reading.glucoseLevel }}</td>
+      <td>{{ reading.readingTime | date:'medium' }}</td>
+      <td>{{ reading.measurementUnit }}</td>
+      <td>{{ reading.notes }}</td>
+    </tr>
+  </tbody>
+</table>
