@@ -16,16 +16,11 @@ public class Glucose {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false)
+    @Column(name = "glucose_level")
     private Double glucoseLevel;
-
-    @Column(nullable = false)
+    @Column(name = "reading_time")
     private LocalDateTime readingTime;
-
-    @Column(nullable = false)
+    @Column(name = "measurement_unit")
     private String measurementUnit;
-
-    @Column
     private String notes;
 }

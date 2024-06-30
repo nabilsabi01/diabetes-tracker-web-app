@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GlucoseService {
-  private apiUrl = 'http://localhost:8080/api/glucose';
+  private apiUrl = 'http://localhost:8081/api/glucose';
 
   constructor(private http: HttpClient) { }
 
@@ -16,5 +16,9 @@ export class GlucoseService {
 
   saveReading(glucose: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/save`, glucose);
+  }
+
+  deleteReading(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/delete/${id}`);
   }
 }

@@ -23,4 +23,14 @@ public class GlucoseController {
     public Glucose saveReading(@RequestBody Glucose glucose) {
         return glucoseService.saveReading(glucose);
     }
+
+    @PutMapping("/update/{id}")
+    public Glucose updateReading(@PathVariable Long id, @RequestBody Glucose glucose) {
+        return glucoseService.updateReading(id, glucose);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteReading(@PathVariable Long id) {
+        glucoseService.deleteReading(id);
+    }
 }

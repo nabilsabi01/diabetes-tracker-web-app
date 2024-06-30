@@ -25,4 +25,17 @@ export class GlucoseListComponent implements OnInit {
       error: (error) => console.error('Error fetching readings', error)
     });
   }
+
+  deleteReading(id: number | undefined) {
+    if (id !== undefined) {
+      this.glucoseService.deleteReading(id).subscribe({
+        next: () => {
+          this.readings = this.readings.filter(reading => reading.id !== id);
+        },
+        error: (error) => console.error('Error deleting reading', error)
+      });
+    } else {
+      console.error('Reading ID is undefined');
+    }
+  }
 }

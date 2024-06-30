@@ -14,6 +14,7 @@
       <td>{{ reading.readingTime | date:'medium' }}</td>
       <td>{{ reading.measurementUnit }}</td>
       <td>{{ reading.notes }}</td>
+      <td><button (click)="deleteReading(reading.id)" class="btn btn-danger">Delete</button></td>
     </tr>
   </tbody>
 </table>
